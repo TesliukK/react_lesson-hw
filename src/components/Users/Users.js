@@ -1,15 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import User from "../User/User";
+import {userService} from "../../services/userService";
+// import UserDetails from "../UserDetails/UserDetails";
+import user from "../User/User";
+
 
 const Users = () => {
-    let users = []
+    const [users, setUsers] = useState([]);
+    const [count, setCount] = useState(0);
+    const [userDetails, setUserDetails] = useState(null)
+    useEffect(() => {
+        userService.getAll()
+            .then(value => value.data)
+            .then(value => setUsers([...value]))
+    }, [count])
 
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(value => value.json())
-        .then(value => users=value)
+
     return (
         <div>
-            {users.map(user => <User key = {user.id} user={user}/>)}
+            <h1>UserDetails</h1>
+            {userDetails && <User user={userDetails}/> }
+            <hr/>
+            <h1>Users: </h1>
+            {users.map(user => <User key={user.id} user={user} setUserDetails={setUserDetails}/>)}
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const User = ({user}) => {
+const User = ({user, setUserDetails}) => {
     const {id,name,username,email} = user
     return (
         <div>
@@ -8,6 +8,7 @@ const User = ({user}) => {
             <div>name: {name}</div>
             <div>username: {username}</div>
             <div>email: {email}</div>
+            <button onClick={()=>setUserDetails(user)}>Details</button>
         </div>
     );
 };
