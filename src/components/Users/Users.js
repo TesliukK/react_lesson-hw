@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import User from "../User/User";
 import {userService} from "../../services/userService";
+import '../style.css'
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -26,6 +27,13 @@ const Users = () => {
                     <li>address,suite: {userDetails.address.suite}</li>
                     <li>address,city: {userDetails.address.city}</li>
                     <li>address,zipcode: {userDetails.address.zipcode}</li>
+                    <li>address,zipcode,geo,lat: {userDetails.address.geo.lat}</li>
+                    <li>address,zipcode,geo,lng: {userDetails.address.geo.lng}</li>
+                    <li>phone: {userDetails.phone}</li>
+                    <li>website: {userDetails.website}</li>
+                    <li>company,name: {userDetails.company.name}</li>
+                    <li>company,catchPhrase: {userDetails.company.catchPhrase}</li>
+                    <li>company,bs: {userDetails.company.bs}</li>
                 </ul>
             </div>}
             <hr/>
