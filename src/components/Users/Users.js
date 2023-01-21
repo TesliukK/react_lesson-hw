@@ -17,7 +17,7 @@ const Users = () => {
     return (
         <div>
             <h1>UserDetails</h1>
-            {userDetails && <div>
+            {userDetails && <div className="liBlock">
                 <ul>
                     <li>id: {userDetails.id}</li>
                     <li>name: {userDetails.name}</li>
@@ -36,7 +36,6 @@ const Users = () => {
                     <li>company,bs: {userDetails.company.bs}</li>
                 </ul>
             </div>}
-            <hr/>
             <h1>Users: </h1>
             {users.map(user => <User key={user.id} user={user} setUserDetails={setUserDetails}/>)}
         </div>
