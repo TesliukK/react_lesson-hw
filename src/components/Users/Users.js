@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import User from "../User/User";
 import {userService} from "../../services/userService";
-// import UserDetails from "../UserDetails/UserDetails";
-import user from "../User/User";
-
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -19,7 +16,18 @@ const Users = () => {
     return (
         <div>
             <h1>UserDetails</h1>
-            {userDetails && <User user={userDetails}/> }
+            {userDetails && <div>
+                <ul>
+                    <li>id: {userDetails.id}</li>
+                    <li>name: {userDetails.name}</li>
+                    <li>username: {userDetails.username}</li>
+                    <li>email: {userDetails.email}</li>
+                    <li>address,street: {userDetails.address.street}</li>
+                    <li>address,suite: {userDetails.address.suite}</li>
+                    <li>address,city: {userDetails.address.city}</li>
+                    <li>address,zipcode: {userDetails.address.zipcode}</li>
+                </ul>
+            </div>}
             <hr/>
             <h1>Users: </h1>
             {users.map(user => <User key={user.id} user={user} setUserDetails={setUserDetails}/>)}
