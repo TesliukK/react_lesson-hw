@@ -2,8 +2,8 @@ import React from 'react';
 
 import "./style.css"
 
-const Coment = ({user}) => {
-    const {id, name, body, email, postId} = user
+const Comment = ({comment}) => {
+    const {id, name, body, email, postId} = comment
 
     return (
         <div className="userBlock">
@@ -17,5 +17,5 @@ const Coment = ({user}) => {
 };
 
 export {
-    Coment
+    Comment
 };

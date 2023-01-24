@@ -6,15 +6,15 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {commentValidator} from "../../validators";
 import {commentsService} from "../../services";
 
-const CommentForm = ({setUsers}) => {
+const CommentForm = ({setComments}) => {
     const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({
         mode: 'all',
         resolver: joiResolver(commentValidator)
     });
 
-    const submit = async (user) => {
-        const {data} = await commentsService.create(user)
-        setUsers(prev => [...prev, data])
+    const submit = async (comments) => {
+        const {data} = await commentsService.create(comments)
+        setComments(prev => [...prev, data])
         reset()
     }
 

@@ -5,16 +5,16 @@ import {commentsService} from "./services";
 import "../src/components/App.css"
 
 const App = () => {
-    const [users, setUsers] = useState([])
+    const [comments, setComments] = useState([])
 
     useEffect(() => {
-        commentsService.getAll().then(({data}) => setUsers([...data]))
+        commentsService.getAll().then(({data}) => setComments([...data]))
     }, [])
 
     return (
         <div className="App">
-            <CommentForm setUsers = {setUsers}/>
-            <Comments users = {users}/>
+            <CommentForm setComments = {setComments}/>
+            <Comments comments = {comments}/>
         </div>
     );
 }

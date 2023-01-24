@@ -1,10 +1,10 @@
-import {Coment} from "../Comment/Coment";
+import {Comment} from "../Comment/Comment";
 
-const Comments = ({users}) => {
+const Comments = ({comments}) => {
 
     return (
         <div className="cont">
-            {users.map(user => <Coment key = {user.id} user = {user}/>)}
+            {comments.map(comment => <Comment key = {comment.id} comment = {comment}/>)}
         </div>
     );
 };
