@@ -3,18 +3,17 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 
-import {userValidator} from "../../validators";
-import {userServices} from "../../services";
-import "./style.css"
+import {commentValidator} from "../../validators";
+import {commentsService} from "../../services";
 
-const UserForm = ({setUsers}) => {
+const CommentForm = ({setUsers}) => {
     const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({
         mode: 'all',
-        resolver: joiResolver(userValidator)
+        resolver: joiResolver(commentValidator)
     });
 
     const submit = async (user) => {
-        const {data} = await userServices.create(user)
+        const {data} = await commentsService.create(user)
         setUsers(prev => [...prev, data])
         reset()
     }
@@ -25,7 +24,7 @@ const UserForm = ({setUsers}) => {
             )}/>
             {errors.name && <span>{errors.name.message}</span>}
 
-            <input type="text" placeholder={'username'} {...register('username',)}/>
+            <input type="text" placeholder={'body'} {...register('body',)}/>
             {errors.username && <span>{errors.username.message}</span>}
 
             <input type="text" placeholder={'email'} {...register('email')}/>
@@ -35,5 +34,5 @@ const UserForm = ({setUsers}) => {
 };
 
 export {
-    UserForm
+    CommentForm
 };

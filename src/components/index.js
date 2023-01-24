@@ -1,3 +1,3 @@
-export * from './UserForm/UserForm';
-export * from './Users/Users';
-export * from './User/User';
+export * from './CommentForm/CommentForm';
+export * from './Comments/Comments';
+export * from './Comment/Coment';
