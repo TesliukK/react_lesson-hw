@@ -2,6 +2,8 @@ import {UserForm, Users} from "./components";
 import {useEffect, useState} from "react";
 import {userServices} from "./services";
 
+import "../src/components/App.css"
+
 const App = () => {
     const [users, setUsers] = useState([])
 
@@ -12,7 +14,6 @@ const App = () => {
     return (
         <div className="App">
             <UserForm setUsers = {setUsers}/>
-            <hr/>
             <Users users = {users}/>
         </div>
     );

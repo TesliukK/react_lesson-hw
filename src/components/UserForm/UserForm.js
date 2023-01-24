@@ -5,6 +5,7 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 import {userValidator} from "../../validators";
 import {userServices} from "../../services";
+import "./style.css"
 
 const UserForm = ({setUsers}) => {
     const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({
@@ -19,7 +20,7 @@ const UserForm = ({setUsers}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
+        <form className="form" onSubmit={handleSubmit(submit)}>
             <input type="text" placeholder={'name'} {...register('name',
             )}/>
             {errors.name && <span>{errors.name.message}</span>}

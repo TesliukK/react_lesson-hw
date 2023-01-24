@@ -1,0 +1,8 @@
+.userBlock {
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    background: cornflowerblue;
+    border-radius: 20px;
+
+}
