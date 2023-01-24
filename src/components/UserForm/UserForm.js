@@ -1,18 +1,21 @@
 import React from 'react';
+
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
-import {userValidator} from "../../validators/userValidator";
+
+import {userValidator} from "../../validators";
 import {userServices} from "../../services";
 
-const UserForm = () => {
-    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({
+const UserForm = ({setUsers}) => {
+    const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({
         mode: 'all',
         resolver: joiResolver(userValidator)
     });
 
     const submit = async (user) => {
         const {data} = await userServices.create(user)
-        console.log(data);
+        setUsers(prev => [...prev, data])
+        reset()
     }
 
     return (
