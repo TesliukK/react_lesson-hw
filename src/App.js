@@ -1,5 +1,4 @@
-import UserForm from "./components/UserForm/UserForm";
-import Users from "./components/Users/Users";
+import {UserForm, Users} from "./components";
 
 const App = () => {
     return (
