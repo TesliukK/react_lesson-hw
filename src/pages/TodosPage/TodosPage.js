@@ -10,4 +10,4 @@ const TodosPage = () => {
     );
 };
 
-export default TodosPage;
+export {TodosPage};

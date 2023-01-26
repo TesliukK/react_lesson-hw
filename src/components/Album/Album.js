@@ -1,6 +1,7 @@
 import React from 'react';
 
 import css from './style.module.css'
+
 const Album = ({album}) => {
     const {id, userId, title} = album;
 

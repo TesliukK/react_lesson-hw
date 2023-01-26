@@ -1,26 +1,25 @@
 import {Route, Routes} from "react-router-dom";
 
-import HomePage from "./pages/HomePage/HomePage";
-import TodosPage from "./pages/TodosPage/TodosPage";
-import AlbumsPage from "./pages/AlbumsPage/AlbumsPage";
-import CommentsPage from "./pages/CommentsPage/CommentsPage";
-import {NotFoundPage, PostCommentsPage} from "./pages";
+import {CommentsPage, NotFoundPage, PostCommentsPage, AlbumsPage, HomePage, TodosPage} from "./pages";
 
 import {MainLayout} from "./layouts";
+import {RouterEndpoints} from "./routes";
+
 
 
 const App = () => {
     return (
         <div>
             <Routes>
-                <Route path={'/'} element={<MainLayout/>}>
-                    <Route index element={<HomePage/>}/>
-                    <Route path={'todos'} element={<TodosPage/>}/>
-                    <Route path={'albums'} element={<AlbumsPage/>}/>
-                    <Route path={'comments'} element={<CommentsPage/>}/>
-                    <Route path={'posts/:postId'} element={<PostCommentsPage/>}/>
+                <Route path={RouterEndpoints.index} element={<MainLayout/>}>
+                    <Route path={RouterEndpoints.index} element={<HomePage/>}/>
+                    <Route path={RouterEndpoints.todos} element={<TodosPage/>}/>
+                    <Route path={RouterEndpoints.albums} element={<AlbumsPage/>}/>
+                    <Route path={RouterEndpoints.comments} element={<CommentsPage/>}>
+                        <Route path={RouterEndpoints.postId} element={<PostCommentsPage/>}/>
+                    </Route>
                 </Route>
-                <Route path={'*'} element={<NotFoundPage/>}/>
+                <Route path={RouterEndpoints.notFound} element={<NotFoundPage/>}/>
             </Routes>
         </div>
 

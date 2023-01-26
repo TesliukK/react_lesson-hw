@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Albums} from "../../components";
 
 const AlbumsPage = () => {
@@ -9,4 +10,4 @@ const AlbumsPage = () => {
     );
 };
 
-export default AlbumsPage;
+export {AlbumsPage};

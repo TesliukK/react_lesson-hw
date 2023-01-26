@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Comments} from "../../components";
 
+
 const CommentsPage = () => {
     return (
         <div>
@@ -10,4 +11,4 @@ const CommentsPage = () => {
     );
 };
 
-export default CommentsPage;
+export {CommentsPage};

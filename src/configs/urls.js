@@ -4,7 +4,7 @@ const urls = {
     comments: '/comments',
     todos: '/todos',
     albums: '/albums',
-    posts: '/posts'
+    postById: (id) => `/posts/${id}`
 };
 
 export {

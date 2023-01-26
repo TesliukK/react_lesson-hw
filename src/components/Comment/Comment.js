@@ -1,10 +1,12 @@
 import React from 'react';
 
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import css from './style.module.css'
 
 const Comment = ({comment}) => {
+
+    const nav = useNavigate()
     const {id, postId, name, email, body} = comment;
 
     return (
@@ -14,7 +16,7 @@ const Comment = ({comment}) => {
             <div>name: {name}</div>
             <div>email: {email}</div>
             <div>body: {body}</div>
-            <Link to={id.toString()}>Post comments</Link>
+            <button onClick={() => nav(postId.toString())}>Get Post</button>
         </div>
     );
 };

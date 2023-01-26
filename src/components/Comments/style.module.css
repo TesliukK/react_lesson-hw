@@ -1,0 +1,9 @@
+.cont{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: scroll;
+    border: 5px solid gold;
+    margin: 10px;
+    border-radius: 20px;
+}
