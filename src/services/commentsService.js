@@ -7,6 +7,7 @@ const commentsService = {
     getById: (id) => axiosService.get(`${urls.comments}/${id}`)
 };
 
+
 export {
-    commentsService
+    commentsService,
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Link} from "react-router-dom";
 
 const Comment = ({comment}) => {
@@ -11,7 +12,7 @@ const Comment = ({comment}) => {
             <div>name: {name}</div>
             <div>email: {email}</div>
             <div>body: {body}</div>
-            <Link to={postId.toString()}>Post comments</Link>
+            <Link to={id.toString()}>Post comments</Link>
         </div>
     );
 };
