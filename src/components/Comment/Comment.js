@@ -2,11 +2,13 @@ import React from 'react';
 
 import {Link} from "react-router-dom";
 
+import css from './style.module.css'
+
 const Comment = ({comment}) => {
     const {id, postId, name, email, body} = comment;
 
     return (
-        <div>
+        <div className={css.block}>
             <div>id: {id}</div>
             <div>postId: {postId}</div>
             <div>name: {name}</div>
