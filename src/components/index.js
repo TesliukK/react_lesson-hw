@@ -4,6 +4,7 @@ export * from './Comments/Comments';
 export * from './Comment/Comment';
 
 export * from './PostComments/PostComments'
+export * from './PostComment/PostComment'
 
 export * from './Todos/Todos';
 export * from './Todo/Todo';

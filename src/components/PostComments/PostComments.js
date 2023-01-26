@@ -1,20 +1,21 @@
 import React, {useEffect, useState} from 'react';
 
-import {commentsService} from "../../services";
+import {postService} from "../../services";
+import {PostComment} from "../PostComment/PostComment";
 
 const PostComments = ({postId}) => {
-    const [comment, setComment] = useState(null)
+    const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        commentsService.getById(postId).then(({data}) => setComment(data))
+        postService.getById(postId).then(({data}) => setPosts(data))
     })
     return (
         <div>
-            {comment &&
+            {posts.map(post=><PostComment key={post.id} post={post}/>) &&
                 <>
-                    <div>id: {comment.id}</div>
-                    <div>postId: {comment.postId}</div>
-                    <div>body: {comment.body}</div>
+                    <div>id: {posts.id}</div>
+                    <div>postId: {posts.postId}</div>
+                    <div>body: {posts.body}</div>
                 </>
             }
         </div>
