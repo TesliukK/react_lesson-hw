@@ -9,8 +9,6 @@ import {NotFoundPage, PostCommentsPage} from "./pages";
 import {MainLayout} from "./layouts";
 
 
-
-
 const App = () => {
     return (
         <div>
