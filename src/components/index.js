@@ -3,8 +3,7 @@ export * from './Header/Header';
 export * from './Comments/Comments';
 export * from './Comment/Comment';
 
-export * from './PostComments/PostComments'
-export * from './PostComment/PostComment'
+export * from './PostDetails/PostDetails'
 
 export * from './Todos/Todos';
 export * from './Todo/Todo';

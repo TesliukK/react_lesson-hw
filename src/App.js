@@ -18,7 +18,7 @@ const App = () => {
                     <Route path={'todos'} element={<TodosPage/>}/>
                     <Route path={'albums'} element={<AlbumsPage/>}/>
                     <Route path={'comments'} element={<CommentsPage/>}/>
-                    <Route path={'posts'} element={<PostCommentsPage/>}/>
+                    <Route path={'posts/:postId'} element={<PostCommentsPage/>}/>
                 </Route>
                 <Route path={'*'} element={<NotFoundPage/>}/>
             </Routes>
