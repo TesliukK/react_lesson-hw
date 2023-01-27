@@ -3,15 +3,22 @@
     margin: 10px 50px 10px 50px;
     padding: 10px;
     border-radius: 20px;
+    color: white;
+    transition-duration: 0.5s;
+}
+
+.block:hover {
+    background: deepskyblue;
 }
 
 .btn {
     border-radius: 20px;
     border: none;
+    transition-duration: 0.5s;
     width: 70px;
-    transition-duration: 1s;
 }
 
 .btn:hover {
-    width: 200px;
+    background: gold;
+    width: 150px;
 }
