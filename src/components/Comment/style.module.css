@@ -4,3 +4,14 @@
     padding: 10px;
     border-radius: 20px;
 }
+
+.btn {
+    border-radius: 20px;
+    border: none;
+    width: 70px;
+    transition-duration: 1s;
+}
+
+.btn:hover {
+    width: 200px;
+}

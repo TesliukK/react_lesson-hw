@@ -16,7 +16,7 @@ const Comment = ({comment}) => {
             <div>name: {name}</div>
             <div>email: {email}</div>
             <div>body: {body}</div>
-            <button onClick={() => nav(postId.toString())}>Get Post</button>
+            <button className={css.btn} onClick={() => nav(postId.toString())}>Get Post</button>
         </div>
     );
 };
