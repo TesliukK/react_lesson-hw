@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import RickAndMorty from "./components/rick_and_morty/rick_and_morty";
 
