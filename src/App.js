@@ -1,19 +1,9 @@
-import {useReducer} from "react";
+import {CatAndDog} from "./components/CatAndDog/CatAndDog";
 
 const App = () => {
-    const reducer = () => {
-
-    }
-
-    function initValue() {
-
-    }
-
-    useReducer(reducer,null, initValue)
-
     return (
         <div className="App">
-            App
+            <CatAndDog/>
         </div>
     );
 }
