@@ -1,10 +1,11 @@
+import css from './dog.module.css'
 const Dog = ({dog,dispatch}) => {
-    const {id, name} = dog;
+    const {name} = dog;
 
     return (
-        <div>
-            {id}) {name}
-            <button onClick={()=>dispatch({type:'DELETE_DOG', payload:id})}>delete</button>
+        <div className={css.block}>
+            Dog name: {name}
+            <button className={css.btn} onClick={()=>dispatch({type:'deleteDog'})}>delete</button>
         </div>
     );
 };

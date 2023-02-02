@@ -3,7 +3,7 @@ import {Dog} from "../Dog/Dog";
 const Dogs = ({dogs,dispatch}) => {
     return (
         <div>
-            {dogs.map(dog=><Dog key={dog.id} dog={dog} dispatch={dispatch}/>)}
+            {dogs.map(dog=><Dog dog={dog} dispatch={dispatch}/>)}
         </div>
     );
 };

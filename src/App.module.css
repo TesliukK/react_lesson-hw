@@ -1,0 +1,27 @@
+.App {
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.block {
+    padding: 10px;
+}
+
+.cat {
+    background: cornflowerblue;
+}
+
+.dog {
+    background: coral;
+}
+
+.btn {
+    margin-left: 10px;
+    border-radius: 15px;
+    transition-duration: 0.5s;
+}
+
+.btn:hover {
+    background: gold;
+}
