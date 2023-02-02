@@ -1,10 +1,21 @@
+import {useReducer} from "react";
 
 const App = () => {
-  return (
-    <div className="App">
+    const reducer = () => {
 
-    </div>
-  );
+    }
+
+    function initValue() {
+
+    }
+
+    useReducer(reducer,null, initValue)
+
+    return (
+        <div className="App">
+            App
+        </div>
+    );
 }
 
-export default App;
+export {App};
