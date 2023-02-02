@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './style.css'
 const RickAndMorty = (props) => {
     let {id, name, status,species,gender,image} = props
@@ -8,7 +9,7 @@ const RickAndMorty = (props) => {
             <p>status: {status}</p>
             <p>species: {species}</p>
             <p>gender: {gender}</p>
-            <img src={image}/>
+            <img src={image} alt={'img'}/>
         </div>
     );
 };
