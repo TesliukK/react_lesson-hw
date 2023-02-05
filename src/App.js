@@ -25,5 +25,5 @@ const App = () => {
 
     );
 }
-// gxcv
+
 export default App;
