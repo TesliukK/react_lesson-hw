@@ -8,18 +8,18 @@ import css from './App.module.css'
 const reducer = (state, action) => {
     switch (action.type) {
         case 'addCat':
-            return {...state, cats: [...state.cats, {name: action.payload}]}
+            return {...state, cats: [...state.cats, {name: action.cats}]}
 
         case 'deleteCat':
-            const index = state.cats.findIndex(cat => action.payload);
+            const index = state.cats.findIndex(cat => action.cats);
             state.cats.splice(index, 1)
             return {...state}
 
         case 'addDog':
-            return {...state, dogs: [...state.dogs, {name: action.payload}]}
+            return {...state, dogs: [...state.dogs, {name: action.dogs}]}
 
         case 'deleteDog':
-            const indexDog = state.dogs.findIndex(dog => action.payload);
+            const indexDog = state.dogs.findIndex(dog => action.dogs);
             state.dogs.splice(indexDog, 1)
             return {...state}
 
@@ -33,12 +33,12 @@ const App = () => {
     const [state, dispatch] = useReducer(reducer, {cats: [], dogs: []}, (data) => data);
 
     const createCat = () => {
-        dispatch({type: 'addCat', payload: catInput.current.value})
+        dispatch({type: 'addCat',})
         catInput.current.value = ''
     };
 
     const createDog = () => {
-        dispatch({type: 'addDog', payload: dogInput.current.value})
+        dispatch({type: 'addDog'})
         dogInput.current.value = ''
     }
     return (
