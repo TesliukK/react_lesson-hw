@@ -16,7 +16,7 @@ const userSlice = createSlice({
     }
 });
 
-const {reducer: userReducer, action: {getAll}} = userSlice;
+const {reducer:userReducer, actions:{getAll}} = userSlice;
 
 const userAction = {
     getAll

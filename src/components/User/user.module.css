@@ -1,0 +1,16 @@
+.block {
+    box-sizing: border-box;
+    background: linear-gradient(cadetblue, gray);
+    margin: 10px;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.5s;
+    animation: show 1s ;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes show {
+    0%{opacity: 0;}
+    100%{opacity: 100%;}
+}
