@@ -1,10 +1,12 @@
-import {Header, Users} from "./components";
+import {HeaderPost, HeaderUser, Posts, Users} from "./components";
 
 const App = () => {
     return (
         <div className="App">
-            <Header/>
-            <Users/>
+            {/*<HeaderUser/>*/}
+            {/*<Users/>*/}
+            <HeaderPost/>
+            <Posts/>
         </div>
     );
 }

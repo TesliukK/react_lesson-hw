@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {userService} from "../../services";
 
 const initialState = {
@@ -29,7 +30,6 @@ const getById = createAsyncThunk(
         } catch (e) {
             return rejectWithValue(e.response.data)
         }
-
     }
 );
 
