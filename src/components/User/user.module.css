@@ -1,16 +1,36 @@
 .block {
     box-sizing: border-box;
-    background: linear-gradient(cadetblue, gray);
+    background: cadetblue;
     margin: 10px;
     padding: 10px;
     opacity: 0;
     transition: 0.5s;
-    animation: show 1s ;
+    animation: show 1s;
     animation-fill-mode: forwards;
     animation-delay: 1s;
 }
 
 @keyframes show {
-    0%{opacity: 0;}
-    100%{opacity: 100%;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.btn {
+    margin: 10px;
+    height: 30px;
+    border: none;
+    background: gray;
+    transition-duration: 0.5s;
+    border-radius: 15px
+}
+
+.btn:hover {
+    background: coral;
+}
+.btn:active{
+    width: 70px;
 }

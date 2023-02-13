@@ -4,7 +4,6 @@ const App = () => {
     return (
         <div className="App">
             <Header/>
-            <hr/>
             <Users/>
         </div>
     );
