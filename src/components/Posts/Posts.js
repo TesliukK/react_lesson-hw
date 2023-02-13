@@ -1,22 +1,23 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {postService} from "../../services";
 import {postAction} from "../../redux";
 import {Post} from "../Post/Post";
 
 const Posts = () => {
     const dispatch = useDispatch();
 
-    const {posts} = useSelector(state => state.posts);
+    const {posts, errors, loading} = useSelector(state => state.posts);
 
     useEffect(() => {
-        postService.getAll().then(({data}) => dispatch(postAction.getAll(data)))
+        dispatch(postAction.getAll())
     }, []);
 
     return (
         <div>
-            {posts.map(post => <Post key={post} post={post}/>)}
+            {errors && JSON.stringify(errors)}
+            {loading && <h1>loading</h1>}
+            {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );
 }

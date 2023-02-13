@@ -6,6 +6,7 @@ const App = () => {
             {/*<HeaderUser/>*/}
             {/*<Users/>*/}
             <HeaderPost/>
+            <hr/>
             <Posts/>
         </div>
     );
