@@ -11,7 +11,7 @@ const Posts = () => {
 
     useEffect(() => {
         dispatch(postAction.getAll())
-    }, []);
+    }, [dispatch]);
 
     return (
         <div>

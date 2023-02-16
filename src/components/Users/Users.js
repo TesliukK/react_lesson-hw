@@ -13,7 +13,7 @@ const Users = () => {
     useEffect(() => {
         // userService.getAll().then(({data}) => dispatch(userAction.getAll(data)))
         dispatch(userAction.getAll())
-    }, []);
+    }, [dispatch]);
 
     return (
         <div>
