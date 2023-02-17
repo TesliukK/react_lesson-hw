@@ -4,18 +4,18 @@ import {carService} from "../../services";
 
 const initialState = {
     cars: [],
-    prev:null,
-    nextPage:null,
+    prev: null,
+    next: null,
     carForUpdate: null,
     errors: null,
     loading: null
-}
+};
 
 const getAll = createAsyncThunk(
     'carSlice/getAll',
-    async (_, thunkAPI) => {
+    async ({page}, thunkAPI) => {
         try {
-            const {data} = await carService.getAll();
+            const {data} = await carService.getAll(page);
             return data
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
@@ -28,12 +28,13 @@ const create = createAsyncThunk(
     async ({car}, thunkAPI) => {
         try {
             await carService.create(car);
-            thunkAPI.dispatch(getAll())
+            thunkAPI.dispatch(getAll({page:1}))
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
+
     }
-);
+)
 
 const deleteById = createAsyncThunk(
     'carSlice/deleteById',
@@ -45,19 +46,20 @@ const deleteById = createAsyncThunk(
             return thunkAPI.rejectWithValue(e.response.data)
         }
     }
-);
+)
+
 const updateById = createAsyncThunk(
     'carSlice/updateById',
     async ({id, car}, thunkAPI) => {
         try {
-            await carService.updateById(id, car)
+            await carService.updateById(id, car);
             thunkAPI.dispatch(getAll())
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
+
         }
     }
 )
-
 
 const carSlice = createSlice({
     name: 'carSlice',
@@ -77,7 +79,7 @@ const carSlice = createSlice({
                 state.loading = false
             })
             .addDefaultCase((state, action) => {
-                const [actionStatus] = action.type.split('/').slice(-1)
+                const [actionStatus] = action.type.split('/').slice(-1);
                 state.loading = actionStatus === 'pending';
             })
 });
