@@ -12,7 +12,14 @@ const authService = {
         }
         return response
     },
-    refresh: (refresh) => apiService.post(urls.auth.refresh, {refresh}),
+    refresh:async function(refresh) {
+        const response = await apiService.post(urls.auth.refresh, {refresh})
+
+        if (response.status === 200) {
+            this.setTokens(response.data)
+        }
+        return response
+    },
     me: () => apiService.get(urls.auth.me),
 
     setTokens: ({access, refresh}) => {

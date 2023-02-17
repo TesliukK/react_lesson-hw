@@ -4,6 +4,8 @@ import {carService} from "../../services";
 
 const initialState = {
     cars: [],
+    prev:null,
+    nextPage:null,
     carForUpdate: null,
     errors: null,
     loading: null
@@ -68,7 +70,10 @@ const carSlice = createSlice({
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                state.cars = action.payload
+                const {prev, next, items} = action.payload;
+                state.cars = items
+                state.prev = prev
+                state.next = next
                 state.loading = false
             })
             .addDefaultCase((state, action) => {
