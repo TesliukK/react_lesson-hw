@@ -1,0 +1,12 @@
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: right;
+    align-content: center;
+    background-color: cadetblue;
+}
+
+a{
+    text-decoration: none;
+    margin: 5px;
+}
