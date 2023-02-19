@@ -9,9 +9,9 @@ const Cars = () => {
     const {cars, prev, next} = useSelector(state => state.cars);
     const dispatch = useDispatch();
     const [query, setQuery] = useSearchParams({page:'1'});
-
     useEffect(() => {
         dispatch(carAction.getAll({page:query.get('page')}))
+        console.log(query.get('page'));
     }, [dispatch, query])
 
     return (

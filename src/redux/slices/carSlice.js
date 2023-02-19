@@ -73,7 +73,6 @@ const carSlice = createSlice({
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 const {prev, next, items} = action.payload;
-                console.log(action.payload);
                 state.cars = items
                 state.prev = prev
                 state.next = next
