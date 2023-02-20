@@ -6,6 +6,7 @@ const HeaderPost = () => {
     return (
         <div>
             {selectedPost&&selectedPost.title}
+            {selectedPost&&selectedPost.body}
         </div>
     );
 };
